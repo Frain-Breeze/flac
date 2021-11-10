@@ -115,7 +115,7 @@ if(CMAKE_BUILD_TYPE STREQUAL Debug OR CMAKE_BUILD_TYPE STREQUAL RelWithDebInfo)
 endif()
 
 add_subdirectory("src")
-add_subdirectory("microbench")
+#add_subdirectory("microbench")
 if(BUILD_DOCS)
     add_subdirectory("doc")
 endif()

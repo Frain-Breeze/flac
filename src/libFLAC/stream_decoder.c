@@ -34,6 +34,17 @@
 #  include <config.h>
 #endif
 
+unsigned long __stack_chk_guard;
+void __stack_chk_guard_setup(void)
+{
+     __stack_chk_guard = 0xBAAAAAAD;//provide some magic numbers
+}
+
+void __stack_chk_fail(void)
+{
+ /* Error message */
+}// will be called when guard variable is corrupted
+
 #include <stdio.h>
 #include <stdlib.h> /* for malloc() */
 #include <string.h> /* for memset/memcpy() */
